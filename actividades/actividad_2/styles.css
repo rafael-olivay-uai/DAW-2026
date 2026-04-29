@@ -1,0 +1,91 @@
+body {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0 16px;
+    font-family: sans-serif;
+    color: #333;
+}
+
+/* Header / Nav */
+header {
+    border-bottom: 1px solid #ddd;
+    padding: 8px 0;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+}
+
+header nav a {
+    color: #0070c0;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Sections dentro del artículo */
+article section {
+    margin-bottom: 24px;
+}
+
+/* Formulario de suscripción */
+#suscripcion {
+    margin-top: 40px;
+    border-top: 2px solid #0070c0;
+    padding-top: 24px;
+}
+
+#suscripcion h2 {
+    margin-top: 0;
+}
+
+#suscripcion fieldset {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 16px 24px;
+}
+
+#suscripcion legend {
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+#suscripcion label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+#suscripcion input,
+#suscripcion select,
+#suscripcion textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#suscripcion textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+#suscripcion button {
+    margin-top: 16px;
+    padding: 10px 24px;
+    background-color: #0070c0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#suscripcion button:hover {
+    background-color: #005a9e;
+}
+
