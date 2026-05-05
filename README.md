@@ -8,3 +8,10 @@
 
 ## Descripción
 Este repositorio va a ser usado para las entregas de las actividades de la materia Desarrollo y Arquitecturas Web.
+
+## Noticias originales utilizadas
+
+| Actividad | Noticia | Fuente |
+|---|---|---|
+| Clase 02 y 03 | Barcelona vs. Celta de Vigo, por la Liga de España 2025 | [LA NACION](https://www.lanacion.com.ar/deportes/futbol/barcelona-vs-celta-de-vigo-por-la-liga-de-espana-2025-dia-hora-y-como-seguir-online-nid21042026/) |
+| Clase 04 | El consejo del ingeniero de Alpine que llevó a Colapinto a su mejor resultado en F1 | [TyC Sports](https://www.tycsports.com/automovilismo/el-consejo-del-ingeniero-de-alpine-que-llevo-a-colapinto-a-su-mejor-resultado-en-f1-id728557.html) |
