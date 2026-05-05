@@ -1,91 +1,301 @@
+/* === RESET & BASE === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    margin: 0 auto;
-    max-width: 800px;
-    padding: 0 16px;
-    font-family: sans-serif;
-    color: #333;
+    background-color: #ffffff;
+    color: #222222;
+    font-family: 'Arial', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
-/* Header / Nav */
-header {
-    border-bottom: 1px solid #ddd;
-    padding: 8px 0;
-    margin-bottom: 16px;
-    font-size: 0.9rem;
-}
-
-header nav a {
-    color: #0070c0;
+a {
+    color: inherit;
     text-decoration: none;
 }
 
-header nav a:hover {
+a:hover {
     text-decoration: underline;
 }
 
-/* Sections dentro del artículo */
-article section {
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+}
+
+/* =====================
+   HEADER
+   ===================== */
+.site-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Barra principal: tres columnas */
+.header-top {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 14px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.icon-btn {
+    font-size: 1.2rem;
+    color: #1a1f5c;
+    padding: 4px;
+}
+
+/* Logo centrado */
+.header-logo {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+.logo-tyc {
+    color: #1a1f5c;
+}
+
+.logo-sports {
+    color: #1a1f5c;
+}
+
+/* Lado derecho: campana + botón */
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.bell-wrapper {
+    font-size: 1.2rem;
+    color: #1a1f5c;
+    position: relative;
+}
+
+.bell-badge {
+    font-size: 0.6rem;
+    color: #1a1f5c;
+    font-weight: 700;
+    vertical-align: super;
+}
+
+.btn-ingresar {
+    background-color: #1a1f5c;
+    color: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 8px 18px;
+    border-radius: 6px;
+}
+
+.btn-ingresar:hover {
+    background-color: #0d1340;
+}
+
+/* Barra de temas secundaria */
+.header-topics {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 10px 24px;
+    border-top: 1px solid #e8e8e8;
+}
+
+.header-topics a {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #1a1f5c;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.header-topics a:hover {
+    color: #2a6bbf;
+    text-decoration: none;
+}
+
+/* =====================
+   MAIN CONTAINER
+   ===================== */
+.container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px 24px 60px;
+}
+
+/* =====================
+   BREADCRUMB
+   ===================== */
+.breadcrumb {
+    font-size: 0.72rem;
+    color: #888;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.breadcrumb a {
+    color: #888;
+}
+
+.breadcrumb a:hover {
+    color: #2a6bbf;
+    text-decoration: none;
+}
+
+.breadcrumb .separator {
+    color: #aaa;
+}
+
+/* =====================
+   ARTICLE
+   ===================== */
+#article-main {
+    padding-top: 8px;
+    border-top: 3px solid #1a1f5c;
+}
+
+.article-title {
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: #0d1340;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.article-lead {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Fila de fecha + botón compartir */
+.article-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.article-date {
+    font-size: 0.82rem;
+    color: #888;
+}
+
+.btn-share {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+}
+
+.btn-share:hover {
+    background-color: #e8e8e8;
+}
+
+/* Imagen */
+.article-figure {
+    margin: 0 0 28px 0;
+}
+
+.article-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.article-caption {
+    font-size: 0.78rem;
+    color: #888;
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+/* =====================
+   CUERPO DEL ARTÍCULO
+   ===================== */
+.article-body p {
+    font-size: 1rem;
+    color: #222;
+    line-height: 1.75;
     margin-bottom: 24px;
 }
 
-/* Formulario de suscripción */
-#suscripcion {
-    margin-top: 40px;
-    border-top: 2px solid #0070c0;
-    padding-top: 24px;
+/* Caja MIRÁ TAMBIÉN */
+.mira-tambien {
+    background-color: #f2f2f2;
+    padding: 20px 24px;
+    margin: 0 0 28px 0;
+    border-radius: 4px;
 }
 
-#suscripcion h2 {
-    margin-top: 0;
+.mira-bar {
+    width: 40px;
+    height: 3px;
+    background-color: #2a6bbf;
+    margin-bottom: 10px;
 }
 
-#suscripcion fieldset {
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 16px 24px;
-}
-
-#suscripcion legend {
-    font-weight: bold;
-    padding: 0 8px;
-}
-
-#suscripcion label {
+.mira-label {
     display: block;
-    margin-top: 12px;
-    margin-bottom: 4px;
-    font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #2a6bbf;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
-#suscripcion input,
-#suscripcion select,
-#suscripcion textarea {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-#suscripcion textarea {
-    height: 80px;
-    resize: vertical;
-}
-
-#suscripcion button {
-    margin-top: 16px;
-    padding: 10px 24px;
-    background-color: #0070c0;
-    color: white;
+.mira-divider {
     border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
+    border-top: 1px solid #cccccc;
+    margin-bottom: 14px;
 }
 
-#suscripcion button:hover {
-    background-color: #005a9e;
+.mira-link {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1a1f5c;
+    line-height: 1.4;
+}
+
+.mira-link:hover {
+    color: #2a6bbf;
+    text-decoration: none;
 }
 
