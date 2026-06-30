@@ -1,5 +1,7 @@
-/* === RESET & BASE === */
-* {
+/* =====================
+   RESET & BASE
+   ===================== */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,7 +10,7 @@
 body {
     background-color: #ffffff;
     color: #222222;
-    font-family: 'Arial', 'Helvetica Neue', sans-serif;
+    font-family: 'Albert Sans', 'Arial', 'Helvetica Neue', sans-serif;
     font-size: 16px;
     line-height: 1.6;
 }
@@ -29,6 +31,12 @@ button {
     font-family: inherit;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
 /* =====================
    HEADER
    ===================== */
@@ -40,95 +48,144 @@ button {
     z-index: 100;
 }
 
-/* Barra principal: tres columnas */
+/* --- Mobile base --- */
 .header-top {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    padding: 14px 24px;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 10px 16px;
 }
 
 .header-left {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 10px;
 }
 
 .icon-btn {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #1a1f5c;
     padding: 4px;
+    background: none;
+    border: none;
 }
 
-/* Logo centrado */
 .header-logo {
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     font-weight: 900;
     letter-spacing: -1px;
     line-height: 1;
 }
 
-.logo-tyc {
-    color: #1a1f5c;
-}
-
+.logo-tyc,
 .logo-sports {
     color: #1a1f5c;
 }
 
-/* Lado derecho: campana + botón */
 .header-right {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 16px;
+    gap: 8px;
 }
 
-.bell-wrapper {
-    font-size: 1.2rem;
-    color: #1a1f5c;
+/* Bell button con badge overlay */
+.btn-bell {
     position: relative;
+    background: none;
+    border: none;
+    padding: 4px;
+    font-size: 1.15rem;
+    color: #1a1f5c;
+    display: flex;
+    align-items: center;
+}
+
+.bell-icon {
+    font-size: 1.15rem;
 }
 
 .bell-badge {
-    font-size: 0.6rem;
-    color: #1a1f5c;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #e02900;
+    color: #fff;
+    font-size: 0.5rem;
     font-weight: 700;
-    vertical-align: super;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+/* Avatar circular */
+.btn-avatar {
+    background-color: #1a1f5c;
+    border: none;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.btn-avatar:hover {
+    background-color: #2a6bbf;
+}
+
+/* Solo se ve en mobile */
+.btn-ingresar--desktop {
+    display: none;
 }
 
 .btn-ingresar {
     background-color: #1a1f5c;
     color: #ffffff;
-    font-size: 0.78rem;
+    font-family: inherit;
+    font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.5px;
-    padding: 8px 18px;
+    padding: 7px 14px;
     border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
 }
 
 .btn-ingresar:hover {
     background-color: #0d1340;
 }
 
-/* Barra de temas secundaria */
 .header-topics {
     display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 10px 24px;
+    gap: 20px;
+    padding: 8px 16px;
     border-top: 1px solid #e8e8e8;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+
+.header-topics::-webkit-scrollbar {
+    display: none;
 }
 
 .header-topics a {
-    font-size: 0.78rem;
+    font-size: 0.7rem;
     font-weight: 700;
     color: #1a1f5c;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+    flex-shrink: 0;
 }
 
 .header-topics a:hover {
@@ -137,165 +194,229 @@ button {
 }
 
 /* =====================
-   MAIN CONTAINER
+   FOOTER
    ===================== */
-.container {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 28px 24px 60px;
+.site-footer {
+    background-color: #1a1f5c;
+    color: #fff;
+    text-align: center;
+    padding: 24px 16px;
+    margin-top: 48px;
 }
 
-/* =====================
-   BREADCRUMB
-   ===================== */
-.breadcrumb {
-    font-size: 0.72rem;
-    color: #888;
-    margin-bottom: 18px;
+.footer-copy {
+    font-size: 0.78rem;
+    margin-bottom: 12px;
+    color: #ccc;
+}
+
+.footer-nav {
     display: flex;
-    align-items: center;
-    gap: 6px;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #aab;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
 }
 
-.breadcrumb a {
-    color: #888;
-}
-
-.breadcrumb a:hover {
-    color: #2a6bbf;
+.footer-nav a:hover {
+    color: #fff;
     text-decoration: none;
 }
 
-.breadcrumb .separator {
-    color: #aaa;
-}
 
 /* =====================
-   ARTICLE
+   PÁGINA DE SUSCRIPCIÓN
    ===================== */
-#article-main {
-    padding-top: 8px;
-    border-top: 3px solid #1a1f5c;
+.subscription-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 32px 16px 60px;
 }
 
-.article-title {
-    font-size: 2.6rem;
+.subscription-title {
+    font-size: 1.8rem;
     font-weight: 900;
     color: #0d1340;
-    line-height: 1.15;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
 
-.article-lead {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #444;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-/* Fila de fecha + botón compartir */
-.article-meta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #e8e8e8;
-}
-
-.article-date {
-    font-size: 0.82rem;
-    color: #888;
-}
-
-.btn-share {
-    width: 36px;
-    height: 36px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 1.1rem;
-    color: #555;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f5f5f5;
-}
-
-.btn-share:hover {
-    background-color: #e8e8e8;
-}
-
-/* Imagen */
-.article-figure {
-    margin: 0 0 28px 0;
-}
-
-.article-image {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.article-caption {
-    font-size: 0.78rem;
-    color: #888;
-    margin-top: 8px;
-    line-height: 1.4;
-}
-
-/* =====================
-   CUERPO DEL ARTÍCULO
-   ===================== */
-.article-body p {
-    font-size: 1rem;
-    color: #222;
-    line-height: 1.75;
-    margin-bottom: 24px;
-}
-
-/* Caja MIRÁ TAMBIÉN */
-.mira-tambien {
-    background-color: #f2f2f2;
-    padding: 20px 24px;
-    margin: 0 0 28px 0;
-    border-radius: 4px;
-}
-
-.mira-bar {
-    width: 40px;
-    height: 3px;
-    background-color: #2a6bbf;
-    margin-bottom: 10px;
-}
-
-.mira-label {
-    display: block;
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: #2a6bbf;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.mira-divider {
-    border: none;
-    border-top: 1px solid #cccccc;
-    margin-bottom: 14px;
-}
-
-.mira-link {
+.subscription-subtitle {
     font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 28px;
+}
+
+.subscription-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px 28px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.82rem;
     font-weight: 700;
     color: #1a1f5c;
-    line-height: 1.4;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
 }
 
-.mira-link:hover {
-    color: #2a6bbf;
-    text-decoration: none;
+.form-group input {
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #222;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
 }
 
+.form-group input:focus {
+    outline: none;
+    border-color: #2a6bbf;
+}
+
+.form-group input.input-error {
+    border-color: #e02900;
+}
+
+.error-message {
+    display: block;
+    min-height: 1em;
+    font-size: 0.75rem;
+    color: #e02900;
+    margin-top: 4px;
+}
+
+.form-group--full {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-submit {
+    background-color: #1a1f5c;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 12px 40px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #0d1340;
+}
+
+/* =====================================================================
+   BREAKPOINT: TABLET  ≥ 600px
+   =====================================================================
+*/
+@media (min-width: 600px) {
+
+    /* Header */
+    .header-top {
+        padding: 12px 28px;
+    }
+
+    .header-logo {
+        font-size: 2rem;
+    }
+
+    .icon-btn {
+        font-size: 1.2rem;
+    }
+
+    .btn-avatar--mobile {
+        display: none;
+    }
+
+    .btn-ingresar--desktop {
+        display: flex;
+    }
+
+    .btn-avatar {
+        width: 36px;
+        height: 36px;
+    }
+
+    .header-topics {
+        gap: 32px;
+        padding: 10px 28px;
+        justify-content: center;
+        overflow-x: visible;
+        white-space: normal;
+    }
+
+    .header-topics a {
+        font-size: 0.75rem;
+    }
+}
+
+
+/* =====================================================================
+   BREAKPOINT: DESKTOP  ≥ 992px
+   =====================================================================
+*/
+@media (min-width: 992px) {
+
+    /* Header */
+    .header-top {
+        padding: 14px 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .header-logo {
+        font-size: 2.4rem;
+    }
+
+    .btn-avatar {
+        width: 38px;
+        height: 38px;
+    }
+
+    .header-topics {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 40px;
+        justify-content: center;
+        gap: 48px;
+    }
+
+    .header-topics a {
+        font-size: 0.78rem;
+    }
+
+    /* Footer */
+    .site-footer {
+        padding: 32px 40px;
+    }
+
+    .subscription-container {
+        max-width: 760px;
+    }
+
+    .subscription-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .form-group--full {
+        grid-column: 1 / -1;
+        align-items: center;
+    }
+}
