@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rick &amp; Morty - Personajes</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="header">
+        <h1>Rick &amp; Morty</h1>
+    </header>
+
+    <main class="container">
+        <section class="controls">
+            <div class="filters">
+                <div class="field">
+                    <label for="filter-name">Nombre</label>
+                    <input type="text" id="filter-name" placeholder="Ej: Rick" />
+                </div>
+
+                <div class="field">
+                    <label for="filter-status">Estado</label>
+                    <select id="filter-status">
+                        <option value="">Todos</option>
+                        <option value="alive">Alive</option>
+                        <option value="dead">Dead</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="filter-species">Especie</label>
+                    <input type="text" id="filter-species" placeholder="Ej: Human" />
+                </div>
+
+                <div class="field">
+                    <label for="filter-type">Tipo</label>
+                    <input type="text" id="filter-type" placeholder="Ej: Parasite" />
+                </div>
+
+                <div class="field">
+                    <label for="filter-gender">Género</label>
+                    <select id="filter-gender">
+                        <option value="">Todos</option>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                        <option value="genderless">Genderless</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button type="button" id="btn-all">Personajes</button>
+                <button type="button" id="btn-search">Buscar</button>
+            </div>
+        </section>
+
+        <p id="status-message" class="status" role="status" aria-live="polite"></p>
+        <p id="error-message" class="error" role="alert" aria-live="assertive" hidden></p>
+
+        <section id="results" class="grid" aria-live="polite"></section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
